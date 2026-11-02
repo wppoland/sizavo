@@ -284,6 +284,30 @@ final class SettingsPage implements HasHooks
         settings_fields(self::SETTINGS_GRP);
         do_settings_sections(self::PAGE);
         echo '</div>';
+
+        echo '<div class="sizer-panel" style="margin-top:20px;">';
+        echo '<h2>' . esc_html__('Ecosystem integrations', 'sizavo') . '</h2>';
+        echo '<table class="form-table" role="presentation"><tbody>';
+        echo '<tr>';
+        echo '<th scope="row">' . esc_html__('Redono (Returns & RMA)', 'sizavo') . '</th>';
+        echo '<td>';
+        if (class_exists('\\Returns\\Plugin')) {
+            echo '<p class="description" style="color:#007017;font-weight:600;">';
+            echo esc_html__('Redono is active. Self-service returns, replacements, and RMA requests are managed directly from customer accounts.', 'sizavo');
+            echo '</p>';
+        } else {
+            echo '<p class="description">';
+            printf(
+                /* translators: %s: partner plugin name, linked to its search on the Add Plugins screen. */
+                esc_html__('Install %s to let customers easily request returns, replacements, and RMA tickets from their account.', 'sizavo'),
+                '<a href="' . esc_url(admin_url('plugin-install.php?s=' . rawurlencode('Redono - Returns and RMA for WooCommerce') . '&tab=search&type=term')) . '">' . esc_html('Redono - Returns and RMA for WooCommerce') . '</a>'
+            );
+            echo '</p>';
+        }
+        echo '</td>';
+        echo '</tr>';
+        echo '</tbody></table>';
+        echo '</div>';
         submit_button();
         echo '</form>';
 
