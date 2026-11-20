@@ -98,8 +98,9 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 == Screenshots ==
 
-1. The size guide modal on a product page.
-2. Building a reusable size chart in the admin.
+1. Size guide pop-up on a product page, opened from the Size guide link.
+2. Settings under WooCommerce > Size Guides: link wording and pop-up heading.
+3. The size guide on a phone.
 
 == External Services ==
 
