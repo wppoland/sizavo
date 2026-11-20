@@ -102,15 +102,15 @@ final class SizeMatcher
             return false;
         }
 
-        if (preg_match('/^(\d+(?:\.\d+)?)\s*[--, ]\s*(\d+(?:\.\d+)?)$/', $cell, $matches)) {
+        if (preg_match('/^(\d+(?:\.\d+)?)\s*[\-\x{2013}\x{2014}]\s*(\d+(?:\.\d+)?)$/u', $cell, $matches)) {
             return $value >= (float) $matches[1] && $value <= (float) $matches[2];
         }
 
-        if (preg_match('/^[≤<]=?\s*(\d+(?:\.\d+)?)$/', $cell, $matches)) {
+        if (preg_match('/^[≤<]=?\s*(\d+(?:\.\d+)?)$/u', $cell, $matches)) {
             return $value <= (float) $matches[1];
         }
 
-        if (preg_match('/^[≥>]=?\s*(\d+(?:\.\d+)?)$/', $cell, $matches)) {
+        if (preg_match('/^[≥>]=?\s*(\d+(?:\.\d+)?)$/u', $cell, $matches)) {
             return $value >= (float) $matches[1];
         }
 
