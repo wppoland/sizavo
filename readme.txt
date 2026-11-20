@@ -4,7 +4,7 @@ Tags: woocommerce, size guide, size chart, product, fashion
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -111,6 +111,9 @@ Sizavo does not connect to any external services. It makes no API calls and load
 Sizavo is fully translatable and ships the `sizavo.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.6 =
+* Fixed: chart cells written as a range (80-88, also with an en or em dash) and limits written with the less-or-equal or greater-or-equal sign match again when a size is suggested from a chart.
 
 = 1.1.5 =
 * Links point at the new plogins.com address and the renamed GitHub repository.
