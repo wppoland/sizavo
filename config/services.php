@@ -16,7 +16,6 @@ use Sizer\Repository\ChartRepository;
 use Sizer\Service\ChartResolver;
 use Sizer\Service\Settings;
 use Sizer\Service\SizeGuideService;
-use Sizer\Service\SizeMatchService;
 use Sizer\Util\TemplateLoader;
 
 defined('ABSPATH') || exit;
@@ -41,8 +40,6 @@ return static function (Container $c): void {
             $c->get(TemplateLoader::class),
         ),
     );
-
-    $c->singleton(SizeMatchService::class, static fn (): SizeMatchService => new SizeMatchService());
 
     if (is_admin()) {
         $c->singleton(
