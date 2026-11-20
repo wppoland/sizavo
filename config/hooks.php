@@ -15,13 +15,11 @@ declare(strict_types=1);
 use Sizer\Admin\Assignment;
 use Sizer\Admin\SettingsPage;
 use Sizer\Service\SizeGuideService;
-use Sizer\Service\SizeMatchService;
 
 defined('ABSPATH') || exit;
 
 return [
     SizeGuideService::class,
-    SizeMatchService::class,
     SettingsPage::class,
     Assignment::class,
 ];
