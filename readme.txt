@@ -4,7 +4,7 @@ Tags: woocommerce, size guide, size chart, product, fashion
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -111,6 +111,9 @@ Sizavo does not connect to any external services. It makes no API calls and load
 Sizavo is fully translatable and ships the `sizavo.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.8 =
+* Plugins list shows shortcuts to the settings screens.
 
 = 1.1.7 =
 * Removed: the `sizer/match_size` filter and the `SizeMatcher` service. Nothing in the free plugin used them; size suggestions are part of Sizavo Pro, which carries its own matcher from 1.0.15. Update Sizavo Pro first.
