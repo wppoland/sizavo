@@ -326,7 +326,9 @@
 	opacity: 0.75;
 }
 
-/* Respect dark themes that flip the page background. */
+/* Dark scheme: the dialog paints its own surface, so it can go dark on a light
+   theme. Two classes per selector: themes paint headings and table cells
+   themselves (Storefront: table:not(.has-background) tbody td). */
 @media (prefers-color-scheme: dark) {
 	.sizer-dialog {
 		--sizer-dialog-bg: #1f2430;
@@ -334,18 +336,45 @@
 		--sizer-border: rgba(255, 255, 255, 0.16);
 		--sizer-head-bg: rgba(255, 255, 255, 0.05);
 		--sizer-accent: #e7a83c;
+
+		color-scheme: dark;
 	}
 
-	.sizer-chart__table tbody th {
+	.sizer-dialog .sizer-dialog__title,
+	.sizer-dialog .sizer-chart__table th,
+	.sizer-dialog .sizer-chart__table td {
+		color: var(--sizer-dialog-fg);
+	}
+
+	.sizer-dialog .sizer-dialog__close:hover {
+		background: rgba(255, 255, 255, 0.12);
+	}
+
+	.sizer-dialog .sizer-chart__table thead th {
+		background: var(--sizer-head-bg);
+	}
+
+	.sizer-dialog .sizer-chart__table tbody th {
 		background: rgba(255, 255, 255, 0.04);
 	}
 
-	.sizer-chart__table tbody tr:nth-child(even) td {
+	.sizer-dialog .sizer-chart__table tbody td {
+		background: transparent;
+	}
+
+	.sizer-dialog .sizer-chart__table tbody tr:nth-child(even) td {
 		background: rgba(255, 255, 255, 0.03);
 	}
 
-	.sizer-chart__table tbody tr:hover th,
-	.sizer-chart__table tbody tr:focus-within th {
+	.sizer-dialog .sizer-chart__table tbody tr:hover th,
+	.sizer-dialog .sizer-chart__table tbody tr:hover td,
+	.sizer-dialog .sizer-chart__table tbody tr:focus-within th,
+	.sizer-dialog .sizer-chart__table tbody tr:focus-within td {
+		background: color-mix(in srgb, var(--sizer-tape, #e7a83c) 16%, transparent);
+	}
+
+	.sizer-dialog .sizer-chart__table tbody tr:hover th,
+	.sizer-dialog .sizer-chart__table tbody tr:focus-within th {
 		color: #fff4e3;
 	}
 }
